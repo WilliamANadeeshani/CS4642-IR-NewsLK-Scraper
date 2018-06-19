@@ -3,6 +3,7 @@ import scrapy
 
 class NewsLKSpider(scrapy.Spider):
     name = "news_lk"
+    page_no = 0
     # Url
     #   Latest News,
     #   President - Parliament - Prime Minister,
@@ -34,6 +35,7 @@ class NewsLKSpider(scrapy.Spider):
             }
 
         next_page = response.css('.pagination-next a::attr(href)').extract_first()
-        if next_page is not None:
+        page_number = int(next_page.split("=")[-1]) / 10
+        if next_page is not None and page_number < 11:
             next_page = response.urljoin(next_page)
             yield scrapy.Request(next_page, callback=self.parse)
