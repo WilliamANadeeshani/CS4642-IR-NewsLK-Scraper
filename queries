@@ -1,0 +1,30 @@
+Queries:
+1. What are the latest news in Sri Lanka (Today)?
+	month:August AND date:20
+
+2. What are the latest President-Parliament-Prime Minister news in Sri Lanka?
+	source:politics
+
+3. What are the laest Cabinet Decisions in Sri Lanka?
+	source:cabinet-decusions
+
+4. What are the latest Political & Current Affairs news in Sri Lanka?
+	source: political-current-affairs
+
+5. What are the sports news of today in Sri Lanka?
+	month:August AND date:19 AND source:sports-travel
+
+6. What are the President-Parliament-Prime Minister news of today in Sri Lanka?
+	month:August AND date:19 AND source:politics
+
+7. How many Cabinet Decisions were taken on the last month?
+	month:July AND source:cabinet-decusions
+
+8. What are the Political & Current Affairs in last week?
+	month:August AND date:[13 TO 19] AND source:political-current-affairs
+
+9. What are the President-Parliament-Prime Minister news in last two weeks?
+	month:August AND date:[6 TO 19] AND source:politics
+
+10. What are  the main sport news in last week?
+	month:August AND date:[13 TO 19] AND source:sports-travel

@@ -16,7 +16,7 @@ class NewsLKSpider(scrapy.Spider):
         'https://www.news.lk/news/sri-lanka',
         'https://www.news.lk/news/politics',
         'https://www.news.lk/news/political-current-affairs',
-        'https://www.news.lk/cabinet-decusions'
+        'https://www.news.lk/cabinet-decusions',
         'https://www.news.lk/news/sports-travel'
     ]
 
@@ -39,6 +39,6 @@ class NewsLKSpider(scrapy.Spider):
 
         next_page = response.css('.pagination-next a::attr(href)').extract_first()
         page_number = int(next_page.split("=")[-1]) / 10
-        if next_page is not None and page_number < 51:
+        if next_page is not None and page_number < 15:
             next_page = response.urljoin(next_page)
             yield scrapy.Request(next_page, callback=self.parse)
